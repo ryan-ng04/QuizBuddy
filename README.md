@@ -1,2 +1,2 @@
 # ryanquizjspractice
-Inspired from 30 days 30 proj, js practice
+more js practice but heres a cool quiz
