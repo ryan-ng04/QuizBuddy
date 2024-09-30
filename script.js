@@ -8,8 +8,8 @@ const questions = [
     {
         question: "What is my favorite programming language?",
         answers: [
-            { text: "Python", correct: false},
-            { text: "Java", correct: true},
+            { text: "Python", correct: true},
+            { text: "Java", correct: false},
             { text: "JavaScript", correct: false},
             { text: "C", correct: false},
         ]
