@@ -99,6 +99,23 @@ body {
     margin-left: 250px;
 }
 
+.profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.username {
+    top: 0;
+    right: 0;
+    font-size: 14px;
+
+}
+.greeting {
+    color: white;
+    font-size: 20px;
+}
 /* Additional styles for responsiveness */
 @media (max-width: 768px) {
     .sidebar {
@@ -118,4 +135,5 @@ body {
         padding: 20px;
         font-size: 16px;
     }
+
 }
