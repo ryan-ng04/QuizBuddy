@@ -1,0 +1,156 @@
+/* quiz.css */
+
+/* General styling for the quiz list items */
+.list-group-item h5 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.list-group-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Style the delete button as an X */
+.btn-delete {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    font-size: 16px;
+    line-height: 1;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #ff1a1a;
+}
+
+/* Additional styling for the quiz display section */
+.created-quizzes {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.created-quizzes h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+/* create-quiz.css */
+
+/* General styles for the Create Quiz page */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the quiz creation form */
+.new-quiz-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.new-quiz-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.new-quiz-section input,
+.new-quiz-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.new-quiz-section .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.new-quiz-section .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Styling for the quizzes display section */
+.created-quizzes {
+    margin-top: 30px;
+}
+
+.created-quizzes h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#quiz-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Styling for quiz cards */
+.quiz-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Editable elements */
+.quiz-title,
+.quiz-description {
+    margin: 0;
+    padding: 5px;
+    font-weight: 600;
+}
+
+/* Button styles */
+.edit-quiz-btn,
+.delete-quiz-btn {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-quiz-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.delete-quiz-btn {
+    background-color: #ff6666;
+    color: white;
+    margin-left: 10px;
+}

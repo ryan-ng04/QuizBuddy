@@ -27,44 +27,47 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to display quizzes in the sidebar
+    // Function to display quizzes in the "Create Quiz" page
     function displayQuizzes() {
         const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
 
         // Clear existing quizzes
-        quizList.innerHTML = `
-            <li class="list-group-item bg-dark border-0">
-                <a href="#" class="text-white" id="homeLink">Home</a>
-            </li>
-            <li class="list-group-item bg-dark border-0">
-                <a href="#" class="text-white" id="topicsLink">Topics</a>
-            </li>
-            <li class="list-group-item bg-dark border-0">
-                <a href="index.html" class="text-white">Quizzes</a>
-            </li>
-            <li class="list-group-item bg-dark border-0">
-                <a href="create-quiz.html" class="text-white">Create Quiz</a>
-            </li>
-        `;
+        quizList.innerHTML = "";
 
         // Add each quiz to the list
         quizzes.forEach((quiz, index) => {
-            const listItem = document.createElement("li");
-            listItem.classList.add("list-group-item", "bg-dark", "border-0");
-            listItem.innerHTML = `
-                <a href="#" class="text-white">${quiz.title}</a>
-                <button class="btn-delete" onclick="deleteQuiz(${index})" aria-label="Delete Quiz">&times;</button>
+            const quizCard = document.createElement("div");
+            quizCard.classList.add("quiz-card");
+            quizCard.innerHTML = `
+                <h3 class="quiz-title" contenteditable="true" onblur="editQuizTitle(${index}, this)">${quiz.title}</h3>
+                <p class="quiz-description" contenteditable="true" onblur="editQuizDescription(${index}, this)">${quiz.description}</p>
+                <button class="edit-quiz-btn" onclick="editQuiz(${index})">Edit</button>
+                <button class="delete-quiz-btn" onclick="deleteQuiz(${index})">Delete</button>
             `;
-            quizList.appendChild(listItem);
+            quizList.appendChild(quizCard);
         });
     }
 
     // Function to delete a quiz
     window.deleteQuiz = function (index) {
         let quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
-        quizzes.splice(index, 1); // Remove the quiz at the specified index
-        localStorage.setItem("quizzes", JSON.stringify(quizzes)); // Update local storage
-        displayQuizzes(); // Refresh the list
+        quizzes.splice(index, 1);
+        localStorage.setItem("quizzes", JSON.stringify(quizzes));
+        displayQuizzes();
+    };
+
+    // Function to edit quiz title
+    window.editQuizTitle = function (index, element) {
+        let quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
+        quizzes[index].title = element.innerText.trim();
+        localStorage.setItem("quizzes", JSON.stringify(quizzes));
+    };
+
+    // Function to edit quiz description
+    window.editQuizDescription = function (index, element) {
+        let quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
+        quizzes[index].description = element.innerText.trim();
+        localStorage.setItem("quizzes", JSON.stringify(quizzes));
     };
 
     // Add event listener for creating a quiz
@@ -72,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createQuizBtn.addEventListener("click", createQuiz);
     }
 
-    // Display quizzes on page load if quiz list exists
+    // Display quizzes on page load
     if (quizList) {
         displayQuizzes();
     }
