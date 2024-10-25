@@ -1,2 +1,2 @@
-# ryanquizjspractice
-more js practice but heres a cool quiz
+# QuizBuddy
+My attempt at building a better quiz app to study.
