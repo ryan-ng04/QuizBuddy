@@ -2,7 +2,7 @@
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
-
+const progressBar = document.getElementById("progress-bar");
 
 const questions = [
     {
@@ -53,11 +53,16 @@ function startQuiz() {
     showQuestion();
 }
 
+//progress bar
+function updateProgress() {
+    const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
+    progressBar.style.width = progress + "%";
+}
+
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    questionElement.innerHTML = `${currentQuestionIndex + 1}. ${currentQuestion.question}`;
 
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
@@ -69,7 +74,10 @@ function showQuestion() {
         }
         button.addEventListener("click", selectAnswer);
     });
+
+    updateProgress(); // 
 }
+
 
 
 function resetState() {

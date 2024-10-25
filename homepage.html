@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Homepage</title>
 </head>
 
 <body>
@@ -14,16 +15,12 @@
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar"
                 aria-controls="sidebar">
-                <span class="navbar-toggler-icon"></span> <!-- Bootstrap Hamburger Menu -->
+                <span class="navbar-toggler-icon"></span>
             </button>
         </div>
     </nav>
-    <div class="profile">
-        <input type="text" id="username" placeholder="Enter your username">
-        <button id="saveButton">Save</button>
-    </div>
-    <div class="greeting" id="greetingDisplay" style="position: absolute; top: 10px; right: 10px;"></div>
-    
+
+    <!-- Sidebar -->
     <div class="offcanvas offcanvas-start bg-dark" id="sidebar">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title text-white">Menu</h5>
@@ -32,18 +29,21 @@
         <div class="offcanvas-body">
             <ul class="list-group">
                 <li class="list-group-item bg-dark border-0">
-                    <a href="#" class="text-white">Home</a>
+                    <a href="#" class="text-white" id="homeLink">Home</a>
                 </li>
                 <li class="list-group-item bg-dark border-0">
-                    <a href="#" class="text-white">Topics</a>
+                    <a href="#" class="text-white" id="topicsLink">Topics</a>
                 </li>
                 <li class="list-group-item bg-dark border-0">
                     <a href="index.html" class="text-white">Quizzes</a>
                 </li>
+                <li class="list-group-item bg-dark border-0">
+                    <a href="create-quiz.html" class="text-white">Create Quiz</a>
+                </li>
             </ul>
         </div>
     </div>
-    
+
     <!-- Main Content -->
     <div class="container mt-5">
         <div class="row">
@@ -54,14 +54,7 @@
             </div>
         </div>
     </div>
-    <div class="card mt-3">
-        <div class="card-body">
-            <h5 class="card-title">Quiz 1</h5>
-            <p class="card-text">Quiz to get to know me</p>
-            <a href="index.html" class="btn btn-primary">Start Quiz</a>
-        </div>
-    </div>
-    
+
     <script src="hp.js"></script>
 </body>
 
