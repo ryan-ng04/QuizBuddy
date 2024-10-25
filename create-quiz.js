@@ -1,23 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Elements for the steps
+    // Elements for steps
     const step1 = document.getElementById("step-1");
     const step2 = document.getElementById("step-2");
     const nextStep1 = document.getElementById("next-step-1");
     const confirmQuizBtn = document.getElementById("confirm-quiz");
     const addQuestionBtn = document.getElementById("add-question");
     const questionList = document.getElementById("question-list");
-    const quizList = document.getElementById("quiz-list");
 
     const quizTitleInput = document.getElementById("quiz-title");
     const quizDescriptionInput = document.getElementById("quiz-description");
 
-    let questions = [];
-
-    // Ensure only Step 1 is visible initially
+    // Make sure only Step 1 is visible initially
     step1.style.display = "block";
     step2.style.display = "none";
 
-    // Move from Step 1 to Step 2
+    // Function to move from Step 1 to Step 2
     nextStep1.addEventListener("click", function () {
         const quizTitle = quizTitleInput.value.trim();
         const quizDescription = quizDescriptionInput.value.trim();

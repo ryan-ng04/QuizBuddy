@@ -18,19 +18,20 @@
 
     <div class="container mt-5">
         <!-- Step 1: Quiz Details -->
-        <div id="step-1" class="step active">
-            <h2>Step 1: Quiz Details</h2>
-            <input type="text" id="quiz-title" placeholder="Quiz Title" class="form-control mb-3">
-            <textarea id="quiz-description" rows="3" placeholder="Quiz Description" class="form-control mb-3"></textarea>
-            <button id="next-step-1" class="btn btn-primary">Next</button>
-        </div>
-        <!---Combined step 2 and 3-->
-        <div id="step-2" class="step active">
-            <h2>Step 2: Add Questions and Answers</h2>
-            <div id="question-list" class="mb-3"></div>
-            <button id="add-question" class="btn btn-secondary mt-3">Add Question</button>
-            <button id="confirm-quiz" class="btn btn-success mt-3">Confirm and Create Quiz</button>
-        </div>
+<div id="step-1" class="step active">
+    <h2>Step 1: Quiz Details</h2>
+    <input type="text" id="quiz-title" placeholder="Quiz Title" class="form-control mb-3">
+    <textarea id="quiz-description" rows="3" placeholder="Quiz Description" class="form-control mb-3"></textarea>
+    <button id="next-step-1" class="btn btn-primary">Next</button>
+</div>
+
+<!-- Step 2: Add Questions and Answers -->
+<div id="step-2" class="step">
+    <h2>Step 2: Add Questions and Answers</h2>
+    <div id="question-list" class="mb-3"></div>
+    <button id="add-question" class="btn btn-secondary mt-3">Add Question</button>
+    <button id="confirm-quiz" class="btn btn-success mt-3">Confirm and Create Quiz</button>
+</div>
 
     </div>
 </body>

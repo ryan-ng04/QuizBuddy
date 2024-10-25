@@ -201,10 +201,9 @@ body::-webkit-scrollbar-thumb {
     /* Hide all steps by default */
 }
 
-/* Display the active step */
 .step.active {
     display: block;
-    /* Show the step that is currently active */
+    /* Show the active step */
 }
 
 /* Styles for the quiz card in the quiz list */
