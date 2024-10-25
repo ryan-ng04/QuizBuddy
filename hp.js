@@ -77,3 +77,41 @@ document.addEventListener("DOMContentLoaded", function () {
         displayQuizzes();
     }
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to display quizzes in the "My Quizzes" dropdown
+    function displayMyQuizzes() {
+        const quizzes = JSON.parse(localStorage.getItem("quizzes")) || [];
+        const myQuizzesList = document.getElementById("my-quizzes-list");
+        myQuizzesList.innerHTML = ""; // Clear any existing content
+
+        if (quizzes.length === 0) {
+            // If no quizzes are available, show a message
+            const noQuizzesItem = document.createElement("li");
+            noQuizzesItem.classList.add("dropdown-item");
+            noQuizzesItem.textContent = "No quizzes available";
+            myQuizzesList.appendChild(noQuizzesItem);
+            return;
+        }
+
+        // Populate the dropdown with quizzes
+        quizzes.forEach((quiz, index) => {
+            const quizItem = document.createElement("li");
+            quizItem.classList.add("dropdown-item");
+            quizItem.textContent = quiz.title;
+            quizItem.onclick = function () {
+                viewQuiz(index);
+            };
+            myQuizzesList.appendChild(quizItem);
+        });
+    }
+
+    // Function to view a specific quiz (placeholder implementation)
+    function viewQuiz(index) {
+        // Here, you can implement the logic to display the quiz content.
+        // For example, you could redirect to a quiz detail page or display a modal.
+        alert(`Viewing Quiz ${index + 1}`);
+    }
+
+    // Initial call to display quizzes in the "My Quizzes" dropdown
+    displayMyQuizzes();
+});
